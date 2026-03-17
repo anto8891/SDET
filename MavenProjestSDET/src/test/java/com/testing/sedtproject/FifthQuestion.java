@@ -1,0 +1,103 @@
+package com.testing.sedtproject;
+
+import java.time.Duration;
+import java.util.List;
+import java.util.Set;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.WindowType;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
+
+import Base.BaseTest;
+
+import Base.BaseTest;
+
+public class FifthQuestion extends BaseTest {
+
+	@BeforeMethod
+	public void start() {
+		setup();
+	}
+
+	@Test
+	public void laumchBrowser() throws InterruptedException {
+		try {
+			driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+			WebElement pricing = driver.findElement(By.xpath("/html/body/div[5]/div[2]/div/nav/a[2]"));
+			Actions action = new Actions(driver);
+			action.moveToElement(pricing).build().perform();
+			action.click(pricing).build().perform();
+			System.out.println("Pricing Button clicked successfully");
+
+			WebElement getStarted = driver
+					.findElement(By.xpath("//*[@id=\"w-tabs-0-data-w-pane-0\"]/div[2]/div[1]/div[1]/a"));
+
+			JavascriptExecutor js = (JavascriptExecutor) driver;
+			js.executeScript("arguments[0].scrollIntoView(true);", getStarted);
+			driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+			getStarted.click();
+			System.out.println("Get started Button clicked successfully");
+			driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+			String mainWindow = driver.getWindowHandle();
+			System.out.println("Main window opened successfully");
+			System.out.println("Main Window Title : " + driver.getTitle());
+			System.out.println("Main URL :" + driver.getCurrentUrl());
+			WebElement tryFree = driver.findElement(By.xpath("/html/body/section[1]/div/div/a"));
+
+			String linkUrl = tryFree.getAttribute("href");
+			driver.switchTo().newWindow(WindowType.WINDOW);
+			driver.get(linkUrl);
+			driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+			WebElement TryforFree = driver
+					.findElement(By.xpath("//*[@id=\"hsForm_61331049-73d0-4fe7-b86e-a88740bd6c4f\"]/div/div[2]/input"));
+			action.moveToElement(TryforFree).build().perform();
+			TryforFree.click();
+			action.moveToElement(TryforFree).build().perform();
+			String expectedError = "Please complete this required field.";
+
+			List<WebElement> errorMessage = driver
+					.findElements(By.xpath("//*[contains(text(), 'Please complete this required field.')]"));
+			for (WebElement e : errorMessage) {
+				System.out.println("Error messages displayed: " + e.getText());
+			}
+			System.out.println("Number of Error messages displayed count : " + errorMessage.size());
+
+			// tryFree.click();
+
+			driver.switchTo().window(mainWindow);
+			driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+
+			Set<String> allwindows = driver.getWindowHandles();
+			for (String windowHandle : allwindows) {
+				if (!windowHandle.equals(mainWindow)) {
+					driver.switchTo().window(windowHandle);
+					System.out.println("New window opened successfully");
+					System.out.println("Current Window Title : " + driver.getTitle());
+					System.out.println("Current URL :" + driver.getCurrentUrl());
+					driver.close();
+					System.out.println("child window Closed Successfully");
+					break;
+				}
+
+			}
+		}
+
+		catch (Exception e) {
+			e.printStackTrace();
+		}
+
+	}
+
+	@AfterMethod
+	public void tearDown() {
+		driver.quit();
+	}
+}

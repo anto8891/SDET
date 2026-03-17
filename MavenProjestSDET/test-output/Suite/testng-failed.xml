@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="smoke(failed)">
+    <groups>
+      <run>
+        <include name="smoke"/>
+        <include name="regression"/>
+      </run>
+    </groups>
+    <classes>
+      <class name="com.testing.sedtproject.SixthQuestion">
+        <methods>
+          <include name="tearDown"/>
+          <include name="switchWindow"/>
+          <include name="verifyErrorMessage"/>
+          <include name="verifyNavigationAndClick"/>
+          <include name="start"/>
+        </methods>
+      </class> <!-- com.testing.sedtproject.SixthQuestion -->
+    </classes>
+  </test> <!-- smoke(failed) -->
+</suite> <!-- Failed suite [Suite] -->

@@ -1,0 +1,10 @@
+
+public class LaunchBrowser {
+
+	public static void main(String[] args) {
+		System.setProperty("Webdriver.chrome.driver", "D:\\Driver\\Chrome\\");
+	
+
+	}
+
+}

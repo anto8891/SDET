@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="3" passed="3" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2026-03-17T14:16:48 GMT-04:00" name="Suite" finished-at="2026-03-17T14:17:24 GMT-04:00" duration-ms="35909">
+    <groups>
+      <group name="regression">
+        <method signature="SixthQuestion.switchWindow()[pri:2, instance:com.testing.sedtproject.SixthQuestion@783a467b]" name="switchWindow" class="com.testing.sedtproject.SixthQuestion"/>
+        <method signature="SixthQuestion.verifyErrorMessage()[pri:3, instance:com.testing.sedtproject.SixthQuestion@783a467b]" name="verifyErrorMessage" class="com.testing.sedtproject.SixthQuestion"/>
+      </group> <!-- regression -->
+      <group name="smoke">
+        <method signature="SixthQuestion.verifyNavigationAndClick()[pri:1, instance:com.testing.sedtproject.SixthQuestion@783a467b]" name="verifyNavigationAndClick" class="com.testing.sedtproject.SixthQuestion"/>
+      </group> <!-- smoke -->
+    </groups>
+    <test started-at="2026-03-17T14:16:48 GMT-04:00" name="smoke" finished-at="2026-03-17T14:17:24 GMT-04:00" duration-ms="35909">
+      <class name="com.testing.sedtproject.SixthQuestion">
+        <test-method is-config="true" signature="start()[pri:0, instance:com.testing.sedtproject.SixthQuestion@783a467b]" started-at="2026-03-17T14:16:48 GMT-04:00" name="start" finished-at="2026-03-17T14:17:03 GMT-04:00" duration-ms="14629" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- start -->
+        <test-method signature="verifyNavigationAndClick()[pri:1, instance:com.testing.sedtproject.SixthQuestion@783a467b]" started-at="2026-03-17T14:17:03 GMT-04:00" name="verifyNavigationAndClick" finished-at="2026-03-17T14:17:09 GMT-04:00" duration-ms="5942" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyNavigationAndClick -->
+        <test-method signature="switchWindow()[pri:2, instance:com.testing.sedtproject.SixthQuestion@783a467b]" started-at="2026-03-17T14:17:09 GMT-04:00" name="switchWindow" finished-at="2026-03-17T14:17:16 GMT-04:00" duration-ms="6594" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- switchWindow -->
+        <test-method signature="verifyErrorMessage()[pri:3, instance:com.testing.sedtproject.SixthQuestion@783a467b]" started-at="2026-03-17T14:17:16 GMT-04:00" name="verifyErrorMessage" finished-at="2026-03-17T14:17:23 GMT-04:00" duration-ms="7176" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyErrorMessage -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.testing.sedtproject.SixthQuestion@783a467b]" started-at="2026-03-17T14:17:23 GMT-04:00" name="tearDown" finished-at="2026-03-17T14:17:24 GMT-04:00" duration-ms="1382" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.testing.sedtproject.SixthQuestion -->
+    </test> <!-- smoke -->
+  </suite> <!-- Suite -->
+</testng-results>

@@ -1,0 +1,23 @@
+package Base;
+
+import java.time.Duration;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class BaseTest {
+
+	protected WebDriver driver;
+	  public void setup() {
+		  System.setProperty("Webdriver.chrome.driver", "C:\\Users\\Aruna Vishvanathan\\eclipse-workspace\\sedtproject\\Driver");
+		  driver = new ChromeDriver();
+		  driver.manage().window().maximize();
+		  driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+		  driver.get("https://autify.com/");
+	  }
+	  public void tearDown() {
+		  if(driver != null) {
+			  driver.quit();
+		  }
+	  }
+}

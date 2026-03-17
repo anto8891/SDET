@@ -1,0 +1,90 @@
+
+public class InvoiceItem_Demo {
+
+	// Variable Initiation
+	
+	private int InvoiceId;
+	private String InvoiceDesc;
+	private int InvoiceQty;
+	private double InvoiceItemPrice;
+	
+	//Constructor
+	
+	public InvoiceItem_Demo(int InvoiceId, String InvoiceDesc, int InvoiceQty, double InvoiceItemPrice) {
+		this.InvoiceId = InvoiceId;
+		this.InvoiceDesc = InvoiceDesc;
+		this.InvoiceQty = InvoiceQty;
+		this.InvoiceItemPrice = InvoiceItemPrice;
+	}
+	
+	//Getters and Setters methods
+	public int getInvoiceId() {
+		return InvoiceId;
+	}
+
+	public void setInvoiceId(int invoiceId) {
+		InvoiceId = invoiceId;
+	}
+
+	public String getInvoiceDesc() {
+		return InvoiceDesc;
+	}
+
+	public void setInvoiceDesc(String invoiceDesc) {
+		InvoiceDesc = invoiceDesc;
+	}
+
+	public int getInvoiceQty() {
+		return InvoiceQty;
+	}
+
+	public void setInvoiceQty(int invoiceQty) {
+		InvoiceQty = invoiceQty;
+	}
+
+	public double getInvoiceItemPrice() {
+		return InvoiceItemPrice;
+	}
+
+	public void setInvoiceItemPrice(double invoiceItemPrice) {
+		InvoiceItemPrice = invoiceItemPrice;
+	}
+	
+	//Method to calculate the price
+	
+	public double calculatePrice() {
+		if (InvoiceQty == 1) {
+		return InvoiceItemPrice;}
+		else {
+			return InvoiceItemPrice * InvoiceQty;
+		}
+		
+		
+	}
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		InvoiceItem_Demo item = new InvoiceItem_Demo(101, "Laptop", 1, 1000);
+		InvoiceItem_Demo item2 = new InvoiceItem_Demo(101, "Desktop", 2, 400);
+		InvoiceItem_Demo item3 = new InvoiceItem_Demo(101, "Tab", 3, 200);
+		System.out.println("Invoice ID: " + item.getInvoiceId());
+		System.out.println("Description: " + item.getInvoiceDesc());
+		System.out.println("Quantity:" + item.getInvoiceQty());
+		System.out.println("Total Price: " + item.calculatePrice());
+		
+		System.out.println("Invoice ID: " + item2.getInvoiceId());
+		System.out.println("Description: " + item2.getInvoiceDesc());
+		System.out.println("Quantity:" + item2.getInvoiceQty());
+		System.out.println("Total Price: " + item2.calculatePrice());
+		
+		System.out.println("Invoice ID: " + item3.getInvoiceId());
+		System.out.println("Description: " + item3.getInvoiceDesc());
+		System.out.println("Quantity:" + item3.getInvoiceQty());
+		System.out.println("Total Price: " + item3.calculatePrice());
+		
+	}
+
+	
+
+}
