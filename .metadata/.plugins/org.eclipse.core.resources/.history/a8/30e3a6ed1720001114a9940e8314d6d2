@@ -1,9 +1,0 @@
-
-public class ThirdQuestion {
-
-	public static void main(String[] args) {
-		System.setProperty("Webdriver.chrome.driver","C:\\Users\\Aruna Vishvanathan\\eclipse-workspace\\SeleniumFirst\\driver\\")
-
-	}
-
-}

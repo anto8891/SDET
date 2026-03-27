@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="WordPress Tests(failed)">
+    <classes>
+      <class name="tests.WordPressTest">
+        <methods>
+          <include name="quitBrowser"/>
+          <include name="wordpressMiniProject"/>
+          <include name="verifyPhotoDirectory"/>
+          <include name="closeBrowser"/>
+          <include name="clickWordPress"/>
+          <include name="launchBrowser"/>
+          <include name="clickCommunityButton"/>
+          <include name="setUp"/>
+        </methods>
+      </class> <!-- tests.WordPressTest -->
+    </classes>
+  </test> <!-- WordPress Tests(failed) -->
+</suite> <!-- Failed suite [Suite] -->
